@@ -12,7 +12,7 @@
     />
 
     <meta charset="UTF-8" />
-    <title>Chris Ma - Research Curator</title>
+    <title>CM - Research Curator</title>
     <style>
       * {
         margin: 0;
@@ -38,23 +38,23 @@
       }
 
       .profile-container {
-  display: flex;
-  align-items: center; /* Keep this */
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 30px;
-  /* Add vertical alignment control */
-  align-items: flex-start; /* Align items to the start vertically */
-}
+        display: flex;
+        align-items: center; /* Keep this */
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        gap: 30px;
+        /* Add vertical alignment control */
+        align-items: flex-start; /* Align items to the start vertically */
+      }
 
-.profile-info {
-  flex: 1;
-  /* Explicitly allow vertical growth if needed */
-  min-height: min-content; /* Try ensuring it takes at least the height of its content */
-  /* Or a fixed min-height to test if space is the issue */
-  /* min-height: 100px; /* Temporary test value */
-}
+      .profile-info {
+        flex: 1;
+        /* Explicitly allow vertical growth if needed */
+        min-height: min-content; /* Try ensuring it takes at least the height of its content */
+        /* Or a fixed min-height to test if space is the issue */
+        /* min-height: 100px; /* Temporary test value */
+      }
 
       .profile-photo {
         width: 300px;
@@ -67,8 +67,6 @@
         color: #777;
         font-weight: bold;
       }
-
-
 
       h1 {
         font-size: 2.5rem;
@@ -189,23 +187,33 @@
       }
       .social-links {
         display: flex;
-        gap: 15px;
+        gap: 20px;
         margin-top: 20px;
-        flex-wrap: wrap; /* Allow wrapping */
+        flex-wrap: wrap;
+        justify-content: center; /* Centers nicely on mobile */
       }
 
       .social-links a {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
-        background-color: #eee;
+        width: 48px;
+        height: 48px;
+        background-color: #f0f0f0;
         border-radius: 50%;
-        color: #555;
+        color: #333;
         text-decoration: none;
-        transition: all 0.3s ease;
-        margin-bottom: 10px; /* Add margin bottom for wrapping */
+        transition: background-color 0.3s, transform 0.3s;
+        font-size: 1.5rem; /* Makes the icons larger */
+      }
+
+      .social-links a:hover {
+        background-color: #e0e0e0;
+        transform: translateY(-4px);
+      }
+
+      .social-links i {
+        pointer-events: none; /* Prevents the icon itself from intercepting clicks */
       }
       /* Responsive Styles */
       @media (max-width: 1024px) {
@@ -343,33 +351,25 @@
           alt="Placeholder photo: Earth"
         />
         <div class="profile-info">
-          <h1>Chris Ma</h1>
+          <h1>CM</h1>
           <p>
             Research Curator in Counselling Psychology | Yorkville University
           </p>
           <div class="social-links">
-            <a href="#" title="LinkedIn">
-              <i class="fab fa-linkedin fa-lg"></i>Test
+            <a href="#" aria-label="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
             </a>
-
-            <a href="#" title="Bluesky">
-              <!-- <i class="fas fa-feather fa-lg"></i> -->
-              Test
-              <!-- Feather icon as a placeholder, Bluesky has no official FontAwesome yet -->
+            <a href="#" aria-label="Bluesky">
+              <i class="fas fa-feather-alt"></i>
             </a>
-
-            <a href="#" title="itch.io">
-              <i class="fab fa-itch-io fa-lg"></i>Test
+            <a href="#" aria-label="itch.io">
+              <i class="fab fa-itch-io"></i>
             </a>
-
-            <a href="#" title="Substack">
-              <i class="fas fa-envelope fa-lg"></i>Test
-              <!-- Substack doesn't have an official FA icon yet -->
+            <a href="#" aria-label="Substack">
+              <i class="fas fa-envelope"></i>
             </a>
-
-            <a href="#" title="Psychology Today">
-              <i class="fas fa-user fa-lg"></i>Test
-              <!-- No official PT icon, using a generic -->
+            <a href="#" aria-label="Psychology Today">
+              <i class="fas fa-user"></i>
             </a>
           </div>
         </div>
@@ -681,7 +681,7 @@
   </body>
   <footer>
     <div class="footer-container">
-      <p>&copy; Chris Ma 2025</p>
+      <p>&copy; CM 2025</p>
     </div>
   </footer>
 </html>
