@@ -38,13 +38,23 @@
       }
 
       .profile-container {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        max-width: 1200px;
-        margin: 0 auto;
-        gap: 30px;
-      }
+  display: flex;
+  align-items: center; /* Keep this */
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+  /* Add vertical alignment control */
+  align-items: flex-start; /* Align items to the start vertically */
+}
+
+.profile-info {
+  flex: 1;
+  /* Explicitly allow vertical growth if needed */
+  min-height: min-content; /* Try ensuring it takes at least the height of its content */
+  /* Or a fixed min-height to test if space is the issue */
+  /* min-height: 100px; /* Temporary test value */
+}
 
       .profile-photo {
         width: 300px;
@@ -58,9 +68,7 @@
         font-weight: bold;
       }
 
-      .profile-info {
-        flex: 1;
-      }
+
 
       h1 {
         font-size: 2.5rem;
@@ -345,7 +353,8 @@
             </a>
 
             <a href="#" title="Bluesky">
-              <i class="fas fa-feather fa-lg"></i>Test
+              <!-- <i class="fas fa-feather fa-lg"></i> -->
+              Test
               <!-- Feather icon as a placeholder, Bluesky has no official FontAwesome yet -->
             </a>
 
