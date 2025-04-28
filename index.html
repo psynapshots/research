@@ -204,35 +204,16 @@
         .topic-grid {
           grid-template-columns: repeat(2, 1fr);
         }
-      }
-
-      @media (max-width: 768px) {
-        header {
-          height: auto;
-          padding: 20px 5%;
-          min-height: 150px; /* Add minimum height */
-        }
-
-        .profile-container {
-          flex-direction: column;
-          text-align: center;
-          gap: 15px;
-        }
-
-        .profile-photo {
-          width: 200px;
-          height: 200px;
-          margin: 0 auto;
-        }
-
         .social-links {
-          justify-content: center;
+          display: flex !important;
+          visibility: visible !important;
         }
-
-        h1 {
-          font-size: 2rem;
+        .social-links a {
+          display: flex !important; /* Or block, flex is fine though */
+          visibility: visible !important;
         }
       }
+
       @media (max-width: 768px) {
         header {
           height: auto; /* Ensure height adapts to content */
@@ -256,14 +237,46 @@
           flex-wrap: wrap; /* Allow wrapping for small screens */
           margin-top: 15px;
         }
-
         h1 {
           font-size: 1.8rem;
+        }
+        .profile-info {
+          outline: 2px solid red !important; /* See bounds of info box */
+          /* Remove fixed height if any is set here */
+          height: auto !important; /* Ensure height adapts to content */
+          /* Check if overflow is hidden, make it visible temporarily */
+          overflow: visible !important; /* Ensure content isn't hidden if it overflows */
+        }
+        .social-links {
+          outline: 2px solid blue !important; /* See bounds of social links container */
+          /* Ensure it's not set to display: none or has zero height */
+          display: flex !important;
+          min-height: 40px !important; /* Give it a minimum height to see if it renders */
+          background-color: yellow !important; /* Temporary background */
+        }
+        .social-links a {
+          outline: 2px solid green !important; /* See bounds of individual buttons */
+        }
+        .social-links {
+          display: flex !important;
+          visibility: visible !important;
+        }
+        .social-links a {
+          display: flex !important; /* Or block, flex is fine though */
+          visibility: visible !important;
         }
       }
       @media (max-width: 576px) {
         .topic-grid {
           grid-template-columns: 1fr;
+        }
+        .social-links {
+          display: flex !important;
+          visibility: visible !important;
+        }
+        .social-links a {
+          display: flex !important; /* Or block, flex is fine though */
+          visibility: visible !important;
         }
       }
       @media (max-width: 320px) {
@@ -284,6 +297,14 @@
         h1 {
           font-size: 1.5rem;
         }
+        .social-links {
+          display: flex !important;
+          visibility: visible !important;
+        }
+        .social-links a {
+          display: flex !important; /* Or block, flex is fine though */
+          visibility: visible !important;
+        }
       }
       footer {
         background-color: white;
@@ -302,7 +323,6 @@
         color: #666;
         font-size: 0.9rem;
       }
-      
     </style>
   </head>
   <body>
@@ -321,25 +341,25 @@
           </p>
           <div class="social-links">
             <a href="#" title="LinkedIn">
-              <i class="fab fa-linkedin fa-lg"></i>
+              <i class="fab fa-linkedin fa-lg"></i>Test
             </a>
 
             <a href="#" title="Bluesky">
-              <i class="fas fa-feather fa-lg"></i>
+              <i class="fas fa-feather fa-lg"></i>Test
               <!-- Feather icon as a placeholder, Bluesky has no official FontAwesome yet -->
             </a>
 
             <a href="#" title="itch.io">
-              <i class="fab fa-itch-io fa-lg"></i>
+              <i class="fab fa-itch-io fa-lg"></i>Test
             </a>
 
             <a href="#" title="Substack">
-              <i class="fas fa-envelope fa-lg"></i>
+              <i class="fas fa-envelope fa-lg"></i>Test
               <!-- Substack doesn't have an official FA icon yet -->
             </a>
 
             <a href="#" title="Psychology Today">
-              <i class="fas fa-user fa-lg"></i>
+              <i class="fas fa-user fa-lg"></i>Test
               <!-- No official PT icon, using a generic -->
             </a>
           </div>
