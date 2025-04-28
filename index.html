@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chris Ma - Research Curator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Verdana, Geneva, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: white;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            padding: 0 5%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .profile-container {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            gap: 30px;
+        }
+
+        .profile-photo {
+            width: 300px;
+            height: 300px;
+            background-color: #ddd;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-weight: bold;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #eee;
+            border-radius: 50%;
+            color: #555;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background-color: #ddd;
+            transform: translateY(-3px);
+        }
+
+        /* Navigation Styles */
+        nav {
+            background-color: white;
+            padding: 15px 5%;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .topic-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+
+        .topic-button {
+            padding: 12px 15px;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+
+        .topic-button:hover {
+            background-color: #e0e0e0;
+        }
+
+        .topic-button.active {
+            background-color: #555;
+            color: white;
+        }
+
+        /* Content Styles */
+        main {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 5%;
+        }
+
+        .content-section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #444;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .citations {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .citations h3 {
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            color: #555;
+        }
+
+        .citation {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            text-indent: -30px;
+            font-size: 0.9rem;
+            color: #444;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .topic-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                height: auto;
+                padding: 20px 5%;
+            }
+            
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .profile-photo {
+                width: 200px;
+                height: 200px;
+                margin: 0 auto;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .topic-grid {
+                grid-template-columns: 1fr;
+            }
+            
+        }
+        footer {
+    background-color: white;
+    padding: 20px 5%;
+    text-align: center;
+    box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+    margin-top: 30px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+footer p {
+    color: #666;
+    font-size: 0.9rem;
+}
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="profile-container">
+            <img class="profile-photo" src="https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg" alt="Placeholder photo: Earth">
+            <div class="profile-info">
+                <h1>Chris Ma</h1>
+                <p>Research Curator in Counselling Psychology | Yorkville University</p>
+                <div class="social-links">
+                    <a href="#" title="LinkedIn">
+                        <i class="fab fa-linkedin fa-lg"></i>
+                      </a>
+                      
+                      <a href="#" title="Bluesky">
+                        <i class="fas fa-feather fa-lg"></i> <!-- Feather icon as a placeholder, Bluesky has no official FontAwesome yet -->
+                      </a>
+                      
+                      <a href="#" title="itch.io">
+                        <i class="fab fa-itch-io fa-lg"></i>
+                      </a>
+                      
+                      <a href="#" title="Substack">
+                        <i class="fas fa-envelope fa-lg"></i> <!-- Substack doesn't have an official FA icon yet -->
+                      </a>
+                      
+                      <a href="#" title="Psychology Today">
+                        <i class="fas fa-user fa-lg"></i> <!-- No official PT icon, using a generic -->
+                      </a>
+                                      </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <div class="nav-container">
+            <div class="topic-grid">
+                <div class="topic-button" data-target="counselling">AI Therapy</div>
+                <div class="topic-button" data-target="interpersonal">Interpersonal Synchrony</div>
+                <div class="topic-button" data-target="intrabrain">Intrabrain Synchrony</div>
+                <div class="topic-button" data-target="meditation">Adverse Effects of Meditation</div>
+                <div class="topic-button" data-target="crosscultural">Cross-Cultural Psychology</div>
+                <div class="topic-button" data-target="statistics">Advancements in Psychological Statistics</div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Counselling Methods Section -->
+        <section id="counselling" class="content-section">
+            <h2>AI Therapy</h2>
+            <p>Placeholder. Commercial conflicts of interest, controversies in declaration, academia vs industry and upfront costs, etc</p>
+            
+            <p>Placeholder.</p>
+            
+            <div class="citations">
+                <h3>References</h3>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+            </div>
+        </section>
+
+        <!-- Interpersonal Synchrony Section -->
+        <section id="interpersonal" class="content-section">
+            <h2>Interpersonal Synchrony</h2>
+            <p>Placeholder. Dyadic+ scanning methods, pfc/temporal synchrony/desync = attachment types etc</p>
+            
+            <p>Placeholder.</p>
+            
+            <div class="citations">
+                <h3>References</h3>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+            </div>
+        </section>
+
+        <!-- Intrabrain Synchrony Section -->
+        <section id="intrabrain" class="content-section">
+            <h2>Intrabrain Synchrony</h2>
+            <p>Placeholder. functional network synchrony, or geometric eigenmode transition = neurotypes, etc</p>
+            
+            <p>Placeholder.</p>
+            
+            <div class="citations">
+                <h3>References</h3>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+            </div>
+        </section>
+
+        <!-- Adverse Effects of Meditation Section -->
+        <section id="meditation" class="content-section">
+            <h2>Adverse Effects of Meditation</h2>
+            <p>Placeholder. Commercial/ideological conflicts of  interest, stealth religion, MYRIAD study etc</p>
+            
+            <p>Placeholder.</p>
+            
+            <div class="citations">
+                <h3>References</h3>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+            </div>
+        </section>
+
+        <!-- Cross-Cultural Psychology Section -->
+        <section id="crosscultural" class="content-section">
+            <h2>Cross-Cultural Psychology</h2>
+            <p>Placeholder. Chinese gambling vs Western hothand fallacies, cross cultural evolution, chinese monopoly on caffiene vs the european enlightenment, etc</p>
+            
+            <p>Placeholder.</p>
+            
+            <div class="citations">
+                <h3>References</h3>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+            </div>
+        </section>
+
+        <!-- Advancements in Psychological Statistics Section -->
+        <section id="statistics" class="content-section">
+            <h2>Advancements in Psychological Statistics</h2>
+            <p>Placeholder. Bayesian methods, PCA, neural networks, spherical/normalized/regularized methods, quantum cognition vis a vis wave-based computation </p>
+            
+            <p>Placeholder.</p>
+            
+            <div class="citations">
+                <h3>References</h3>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+                <p class="citation">Placeholder, P. (2021). <i> Lorem , 77</i>(5), 1111-2222.</p>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Show the first section by default
+            document.querySelector('.content-section').classList.add('active');
+            document.querySelector('.topic-button').classList.add('active');
+            
+            // Add click event listeners to all topic buttons
+            const topicButtons = document.querySelectorAll('.topic-button');
+            topicButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons and sections
+                    topicButtons.forEach(btn => btn.classList.remove('active'));
+                    document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Show corresponding section
+                    const targetId = this.getAttribute('data-target');
+                    document.getElementById(targetId).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+<footer>
+    <div class="footer-container">
+        <p>&copy; Your Name 2025</p>
+    </div>
+</footer>
+</html>
