@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover"
+    />
 
     <link
       rel="stylesheet"
@@ -10,7 +12,6 @@
     />
 
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Chris Ma - Research Curator</title>
     <style>
       * {
@@ -209,6 +210,7 @@
         header {
           height: auto;
           padding: 20px 5%;
+          min-height: 150px; /* Add minimum height */
         }
 
         .profile-container {
@@ -233,9 +235,8 @@
       }
       @media (max-width: 768px) {
         header {
-          height: auto;
+          height: auto; /* Ensure height adapts to content */
           padding: 20px 5%;
-          min-height: 150px; /* Add minimum height */
         }
 
         .profile-container {
@@ -301,35 +302,7 @@
         color: #666;
         font-size: 0.9rem;
       }
-      @supports (-webkit-touch-callout: none) {
-    header {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        min-height: 150px;
-        height: auto;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-    }
-    
-    .profile-container {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-direction: column;
-        flex-direction: column;
-        width: 100%;
-    }
-    
-    .social-links {
-        display: -webkit-box;
-        display: -webkit-flex;
-        display: flex;
-        -webkit-flex-wrap: wrap;
-        flex-wrap: wrap;
-        width: 100%;
-    }
-}
+      
     </style>
   </head>
   <body>
