@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -298,6 +301,35 @@
         color: #666;
         font-size: 0.9rem;
       }
+      @supports (-webkit-touch-callout: none) {
+    header {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        min-height: 150px;
+        height: auto;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+    }
+    
+    .profile-container {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .social-links {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: wrap;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+}
     </style>
   </head>
   <body>
